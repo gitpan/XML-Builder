@@ -1,0 +1,31 @@
+{
+   "resources" : {
+      "repository" : "git://github.com/ap/XML-Builder",
+      "homepage" : "http://github.com/ap/XML-Builder"
+   },
+   "generated_by" : "Dist::Zilla version 1.100520",
+   "meta-spec" : {
+      "version" : 1.4,
+      "url" : "http://module-build.sourceforge.net/META-spec-v1.4.html"
+   },
+   "version" : "0.900",
+   "name" : "XML-Builder",
+   "author" : [
+      "Aristotle Pagaltzis <pagaltzis@gmx.de>"
+   ],
+   "license" : "perl",
+   "build_requires" : {
+      "Module::Build" : "0.3601"
+   },
+   "requires" : {
+      "Scalar::Util" : "0",
+      "parent" : "0",
+      "Carp::Clan" : "0",
+      "Object::Tiny::Lvalue" : "0",
+      "Encode" : "0"
+   },
+   "abstract" : "programmatic XML generation, conveniently",
+   "configure_requires" : {
+      "Module::Build" : "0.3601"
+   }
+}
