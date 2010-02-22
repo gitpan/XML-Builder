@@ -21,4 +21,4 @@ requires:
 resources:
   homepage: http://github.com/ap/XML-Builder
   repository: git://github.com/ap/XML-Builder
-version: 0.900
+version: 0.901

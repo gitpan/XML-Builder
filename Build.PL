@@ -19,7 +19,7 @@ my %module_build_args = (
                                        'Object::Tiny::Lvalue' => '0',
                                        'Encode' => '0'
                                      },
-                       'dist_version' => '0.900',
+                       'dist_version' => '0.901',
                        'license' => 'perl'
                      );
 

@@ -1,9 +1,12 @@
-# ABSTRACT: programmatic XML generation, conveniently
-
 use strict;
 
+package XML::Builder;
+our $VERSION = '0.901';
+
+# ABSTRACT: programmatic XML generation, conveniently
+
 package XML::Builder::Util;
-our $VERSION = '0.900';
+our $VERSION = '0.901';
 
 use Scalar::Util ();
 use Encode ();
@@ -34,7 +37,7 @@ sub $new_method { \$_[0]->$class_method->new( builder => \@_ ) }
 #######################################################################
 
 package XML::Builder;
-our $VERSION = '0.900';
+our $VERSION = '0.901';
 
 use Object::Tiny::Lvalue qw( nsmap default_ns encoding );
 
@@ -224,7 +227,7 @@ sub stringify {
 #######################################################################
 
 package XML::Builder::NS;
-our $VERSION = '0.900';
+our $VERSION = '0.901';
 
 use Object::Tiny::Lvalue qw( builder uri prefix qname_for_localname );
 use overload '""' => 'uri';
@@ -262,7 +265,7 @@ sub factory { bless \shift, 'XML::Builder::NS::QNameFactory' }
 #######################################################################
 
 package XML::Builder::NS::QNameFactory;
-our $VERSION = '0.900';
+our $VERSION = '0.901';
 
 sub AUTOLOAD { my $self = shift; $$self->qname( ( our $AUTOLOAD =~ /.*::(.*)/ ), @_ ) }
 sub _qname   { my $self = shift; $$self->qname(                                  @_ ) }
@@ -271,14 +274,14 @@ sub DESTROY  {}
 #######################################################################
 
 package XML::Builder::Fragment::Role;
-our $VERSION = '0.900';
+our $VERSION = '0.901';
 
 sub depends_ns_scope { 1 }
 
 #######################################################################
 
 package XML::Builder::Fragment;
-our $VERSION = '0.900';
+our $VERSION = '0.901';
 
 use parent -norequire => 'XML::Builder::Fragment::Role';
 
@@ -348,7 +351,7 @@ sub flatten {
 #######################################################################
 
 package XML::Builder::Fragment::Unsafe;
-our $VERSION = '0.900';
+our $VERSION = '0.901';
 
 use parent -norequire => 'XML::Builder::Fragment';
 
@@ -371,7 +374,7 @@ sub flatten { shift }
 #######################################################################
 
 package XML::Builder::Fragment::QName;
-our $VERSION = '0.900';
+our $VERSION = '0.901';
 
 use Object::Tiny::Lvalue qw( builder ns name as_qname as_attr_qname as_clarkname as_string );
 
@@ -449,7 +452,7 @@ sub foreach {
 #######################################################################
 
 package XML::Builder::Fragment::Tag;
-our $VERSION = '0.900';
+our $VERSION = '0.901';
 
 use parent -norequire => 'XML::Builder::Fragment';
 use Object::Tiny::Lvalue qw( qname attr );
@@ -488,7 +491,7 @@ sub flatten { shift }
 #######################################################################
 
 package XML::Builder::Fragment::Root;
-our $VERSION = '0.900';
+our $VERSION = '0.901';
 
 use parent -norequire => 'XML::Builder::Fragment::Tag';
 use overload '""' => 'as_string';
@@ -513,7 +516,7 @@ sub as_string {
 #######################################################################
 
 package XML::Builder::Fragment::Document;
-our $VERSION = '0.900';
+our $VERSION = '0.901';
 
 use parent -norequire => 'XML::Builder::Fragment';
 use overload '""' => 'as_string';
@@ -561,11 +564,11 @@ __END__
 
 =head1 NAME
 
-XML::Builder::Util - programmatic XML generation, conveniently
+XML::Builder - programmatic XML generation, conveniently
 
 =head1 VERSION
 
-version 0.900
+version 0.901
 
 =head1 DESCRIPTION
 

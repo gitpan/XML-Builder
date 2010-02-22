@@ -8,7 +8,7 @@
       "version" : 1.4,
       "url" : "http://module-build.sourceforge.net/META-spec-v1.4.html"
    },
-   "version" : "0.900",
+   "version" : "0.901",
    "name" : "XML-Builder",
    "author" : [
       "Aristotle Pagaltzis <pagaltzis@gmx.de>"
