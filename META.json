@@ -1,31 +1,43 @@
 {
-   "resources" : {
-      "repository" : "git://github.com/ap/XML-Builder",
-      "homepage" : "http://github.com/ap/XML-Builder"
-   },
-   "generated_by" : "Dist::Zilla version 1.100520",
-   "meta-spec" : {
-      "version" : 1.4,
-      "url" : "http://module-build.sourceforge.net/META-spec-v1.4.html"
-   },
-   "version" : "0.901",
-   "name" : "XML-Builder",
+   "abstract" : "programmatic XML generation, conveniently",
    "author" : [
       "Aristotle Pagaltzis <pagaltzis@gmx.de>"
    ],
-   "license" : "perl",
-   "build_requires" : {
-      "Module::Build" : "0.3601"
+   "dynamic_config" : 0,
+   "generated_by" : "Dist::Zilla version 4.101550",
+   "license" : "perl_5",
+   "meta-spec" : {
+      "url" : "http://github.com/dagolden/cpan-meta/",
+      "version" : 2
    },
-   "requires" : {
-      "Scalar::Util" : "0",
-      "parent" : "0",
-      "Carp::Clan" : "0",
-      "Object::Tiny::Lvalue" : "0",
-      "Encode" : "0"
+   "name" : "XML-Builder",
+   "prereqs" : {
+      "build" : {
+         "requires" : {
+            "Module::Build" : "0.3601"
+         }
+      },
+      "configure" : {
+         "requires" : {
+            "Module::Build" : "0.3601"
+         }
+      },
+      "runtime" : {
+         "requires" : {
+            "Carp::Clan" : "0",
+            "Encode" : "0",
+            "Object::Tiny::Lvalue" : "0",
+            "Scalar::Util" : "0",
+            "parent" : "0"
+         }
+      }
    },
-   "abstract" : "programmatic XML generation, conveniently",
-   "configure_requires" : {
-      "Module::Build" : "0.3601"
-   }
+   "release_status" : "stable",
+   "resources" : {
+      "homepage" : "http://github.com/ap/XML-Builder",
+      "repository" : {
+         "url" : "git://github.com/ap/XML-Builder"
+      }
+   },
+   "version" : "0.902"
 }
