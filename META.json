@@ -4,22 +4,19 @@
       "Aristotle Pagaltzis <pagaltzis@gmx.de>"
    ],
    "dynamic_config" : 0,
-   "generated_by" : "Dist::Zilla version 4.101550",
-   "license" : "perl_5",
+   "generated_by" : "Dist::Zilla version 5.029, CPAN::Meta::Converter version 2.143240",
+   "license" : [
+      "perl_5"
+   ],
    "meta-spec" : {
-      "url" : "http://github.com/dagolden/cpan-meta/",
-      "version" : 2
+      "url" : "http://search.cpan.org/perldoc?CPAN::Meta::Spec",
+      "version" : "2"
    },
    "name" : "XML-Builder",
    "prereqs" : {
-      "build" : {
-         "requires" : {
-            "Module::Build" : "0.3601"
-         }
-      },
       "configure" : {
          "requires" : {
-            "Module::Build" : "0.3601"
+            "ExtUtils::MakeMaker" : "0"
          }
       },
       "runtime" : {
@@ -28,16 +25,35 @@
             "Encode" : "0",
             "Object::Tiny::Lvalue" : "0",
             "Scalar::Util" : "0",
-            "parent" : "0"
+            "XML::Builder::Fragment" : "0",
+            "XML::Builder::Fragment::Role" : "0",
+            "XML::Builder::Fragment::Tag" : "0",
+            "overload" : "0",
+            "parent" : "0",
+            "perl" : "5.008001",
+            "strict" : "0",
+            "warnings" : "0"
+         }
+      },
+      "test" : {
+         "requires" : {
+            "File::Find" : "0",
+            "File::Temp" : "0",
+            "Test::More" : "0"
          }
       }
    },
    "release_status" : "stable",
    "resources" : {
+      "bugtracker" : {
+         "web" : "http://github.com/ap/XML-Builder/issues"
+      },
       "homepage" : "http://github.com/ap/XML-Builder",
       "repository" : {
+         "type" : "git",
          "url" : "git://github.com/ap/XML-Builder"
       }
    },
-   "version" : "0.902"
+   "version" : "0.903"
 }
+

@@ -3,11 +3,13 @@ abstract: 'programmatic XML generation, conveniently'
 author:
   - 'Aristotle Pagaltzis <pagaltzis@gmx.de>'
 build_requires:
-  Module::Build: 0.3601
+  File::Find: 0
+  File::Temp: 0
+  Test::More: 0
 configure_requires:
-  Module::Build: 0.3601
+  ExtUtils::MakeMaker: 0
 dynamic_config: 0
-generated_by: 'Dist::Zilla version 4.101550, CPAN::Meta::Converter version 2.101461'
+generated_by: 'Dist::Zilla version 5.029, CPAN::Meta::Converter version 2.143240'
 license: perl
 meta-spec:
   url: http://module-build.sourceforge.net/META-spec-v1.4.html
@@ -18,8 +20,16 @@ requires:
   Encode: 0
   Object::Tiny::Lvalue: 0
   Scalar::Util: 0
+  XML::Builder::Fragment: 0
+  XML::Builder::Fragment::Role: 0
+  XML::Builder::Fragment::Tag: 0
+  overload: 0
   parent: 0
+  perl: 5.008001
+  strict: 0
+  warnings: 0
 resources:
+  bugtracker: http://github.com/ap/XML-Builder/issues
   homepage: http://github.com/ap/XML-Builder
   repository: git://github.com/ap/XML-Builder
-version: 0.902
+version: 0.903

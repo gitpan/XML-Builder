@@ -1,17 +1,13 @@
+use 5.008001;
 use strict;
+use warnings;
 
 package XML::Builder;
-BEGIN {
-  $XML::Builder::VERSION = '0.902';
-}
-
+$XML::Builder::VERSION = '0.903';
 # ABSTRACT: programmatic XML generation, conveniently
 
 package XML::Builder::Util;
-BEGIN {
-  $XML::Builder::Util::VERSION = '0.902';
-}
-
+$XML::Builder::Util::VERSION = '0.903';
 use Scalar::Util ();
 use Encode ();
 use Carp::Clan '^XML::Builder(?:\z|::)';
@@ -230,10 +226,7 @@ sub stringify {
 #######################################################################
 
 package XML::Builder::NS;
-BEGIN {
-  $XML::Builder::NS::VERSION = '0.902';
-}
-
+$XML::Builder::NS::VERSION = '0.903';
 use Object::Tiny::Lvalue qw( builder uri prefix qname_for_localname );
 use overload '""' => 'uri', fallback => 1;
 
@@ -270,10 +263,7 @@ sub factory { bless \shift, 'XML::Builder::NS::QNameFactory' }
 #######################################################################
 
 package XML::Builder::NS::QNameFactory;
-BEGIN {
-  $XML::Builder::NS::QNameFactory::VERSION = '0.902';
-}
-
+$XML::Builder::NS::QNameFactory::VERSION = '0.903';
 sub AUTOLOAD { my $self = shift; $$self->qname( ( our $AUTOLOAD =~ /.*::(.*)/ ), @_ ) }
 sub _qname   { my $self = shift; $$self->qname(                                  @_ ) }
 sub DESTROY  {}
@@ -281,19 +271,13 @@ sub DESTROY  {}
 #######################################################################
 
 package XML::Builder::Fragment::Role;
-BEGIN {
-  $XML::Builder::Fragment::Role::VERSION = '0.902';
-}
-
+$XML::Builder::Fragment::Role::VERSION = '0.903';
 sub depends_ns_scope { 1 }
 
 #######################################################################
 
 package XML::Builder::Fragment;
-BEGIN {
-  $XML::Builder::Fragment::VERSION = '0.902';
-}
-
+$XML::Builder::Fragment::VERSION = '0.903';
 use parent -norequire => 'XML::Builder::Fragment::Role';
 
 use Object::Tiny::Lvalue qw( builder content );
@@ -362,10 +346,7 @@ sub flatten {
 #######################################################################
 
 package XML::Builder::Fragment::Unsafe;
-BEGIN {
-  $XML::Builder::Fragment::Unsafe::VERSION = '0.902';
-}
-
+$XML::Builder::Fragment::Unsafe::VERSION = '0.903';
 use parent -norequire => 'XML::Builder::Fragment';
 
 sub depends_ns_scope { 0 }
@@ -387,10 +368,7 @@ sub flatten { shift }
 #######################################################################
 
 package XML::Builder::Fragment::QName;
-BEGIN {
-  $XML::Builder::Fragment::QName::VERSION = '0.902';
-}
-
+$XML::Builder::Fragment::QName::VERSION = '0.903';
 use Object::Tiny::Lvalue qw( builder ns name as_qname as_attr_qname as_clarkname as_string );
 
 use parent -norequire => 'XML::Builder::Fragment';
@@ -467,10 +445,7 @@ sub foreach {
 #######################################################################
 
 package XML::Builder::Fragment::Tag;
-BEGIN {
-  $XML::Builder::Fragment::Tag::VERSION = '0.902';
-}
-
+$XML::Builder::Fragment::Tag::VERSION = '0.903';
 use parent -norequire => 'XML::Builder::Fragment';
 use Object::Tiny::Lvalue qw( qname attr );
 
@@ -508,10 +483,7 @@ sub flatten { shift }
 #######################################################################
 
 package XML::Builder::Fragment::Root;
-BEGIN {
-  $XML::Builder::Fragment::Root::VERSION = '0.902';
-}
-
+$XML::Builder::Fragment::Root::VERSION = '0.903';
 use parent -norequire => 'XML::Builder::Fragment::Tag';
 use overload '""' => 'as_string', fallback => 1;
 
@@ -535,10 +507,7 @@ sub as_string {
 #######################################################################
 
 package XML::Builder::Fragment::Document;
-BEGIN {
-  $XML::Builder::Fragment::Document::VERSION = '0.902';
-}
-
+$XML::Builder::Fragment::Document::VERSION = '0.903';
 use parent -norequire => 'XML::Builder::Fragment';
 use overload '""' => 'as_string', fallback => 1;
 
@@ -579,9 +548,11 @@ sub as_string {
 
 1;
 
-
 __END__
+
 =pod
+
+=encoding UTF-8
 
 =head1 NAME
 
@@ -589,7 +560,7 @@ XML::Builder - programmatic XML generation, conveniently
 
 =head1 VERSION
 
-version 0.902
+version 0.903
 
 =head1 DESCRIPTION
 
@@ -599,14 +570,13 @@ Documentation will soon be added. Please be patient.
 
 =head1 AUTHOR
 
-  Aristotle Pagaltzis <pagaltzis@gmx.de>
+Aristotle Pagaltzis <pagaltzis@gmx.de>
 
 =head1 COPYRIGHT AND LICENSE
 
-This software is copyright (c) 2010 by Aristotle Pagaltzis.
+This software is copyright (c) 2015 by Aristotle Pagaltzis.
 
 This is free software; you can redistribute it and/or modify it under
 the same terms as the Perl 5 programming language system itself.
 
 =cut
-
