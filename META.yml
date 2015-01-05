@@ -20,9 +20,6 @@ requires:
   Encode: 0
   Object::Tiny::Lvalue: 0
   Scalar::Util: 0
-  XML::Builder::Fragment: 0
-  XML::Builder::Fragment::Role: 0
-  XML::Builder::Fragment::Tag: 0
   overload: 0
   parent: 0
   perl: 5.008001
@@ -32,4 +29,4 @@ resources:
   bugtracker: http://github.com/ap/XML-Builder/issues
   homepage: http://github.com/ap/XML-Builder
   repository: git://github.com/ap/XML-Builder
-version: 0.903
+version: 0.904
